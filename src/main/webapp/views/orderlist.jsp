@@ -23,8 +23,7 @@
 		<input type="submit" value="All Orders" />
 	</form>
 	</sec:authorize>
-	<ol>
-	
+	<ol>	
 	<c:forEach var="order" items="${orders}">
 		<li>
 			Date: <c:out value="${order.orderDate}" /><br/>

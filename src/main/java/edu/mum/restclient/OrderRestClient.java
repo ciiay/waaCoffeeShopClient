@@ -30,8 +30,8 @@ public class OrderRestClient {
 		return Arrays.asList(restTemplate.getForObject("http://localhost:8080/orderRest/getOrderByPerson/" + person.getId(), Order[].class));
 	}
 	
-	public void createOrder(Order order){
-		restTemplate.postForObject("http://localhost:8080/orderRest/saveOrder", order, Order.class);
+	public Order createOrder(Order order){
+		return restTemplate.postForObject("http://localhost:8080/orderRest/saveOrder", order, Order.class);
 	}
 	
 	

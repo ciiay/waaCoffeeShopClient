@@ -23,10 +23,10 @@ public class HomeController {
 	public String getHome(Model model){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 	    String name = auth.getName();
-	    if(name.equals("yeerick")){
-	    	model.addAttribute("person", personRestClient.getPerson(1));
-	    } else if(name.equals("orlando")){
-	    	model.addAttribute("person", personRestClient.getPerson(2));
+	    if(name.equals("apple")){
+	    	model.addAttribute("person", personRestClient.getPerson(26));
+	    } else if(name.equals("peach")){
+	    	model.addAttribute("person", personRestClient.getPerson(27));
 	    }
 		if(!model.containsAttribute("order")){
 			model.addAttribute("order", new Order());

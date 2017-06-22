@@ -50,6 +50,8 @@ public class OrderController {
 	
 	@RequestMapping(value="/myorder", method=RequestMethod.GET)
 	public String getMyOrder(Model model, @ModelAttribute("person") Person person){
+		
+		//System.out.println("--------------------------"+person.getId());
 		model.addAttribute("orders", orderRestClient.getOrderByPerson(person));
 		model.addAttribute("myorder", "My");
 		return "orderlist";
@@ -61,6 +63,7 @@ public class OrderController {
 		for(Orderline ol: order.getOrderLines()){
 			if(ol.getProduct().getId() == productId){
 				ol.setQuantity(ol.getQuantity() + quantity);
+				ol.setOrder(order);
 				inside = true;
 			}
 		}
@@ -73,6 +76,7 @@ public class OrderController {
 	
 	@RequestMapping(value="/addOrder", method= RequestMethod.POST)
 	public String addOrder(Model model, @ModelAttribute("order") Order order, @ModelAttribute("person") Person person){
+		
 		order.setOrderDate(new Date());
 		order.setPerson(person);		
 		orderRestClient.createOrder(order);

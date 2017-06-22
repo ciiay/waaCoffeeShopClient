@@ -7,9 +7,9 @@
 <title>Spring Product Application</title>
 </head>
 <body>
-	<h1>Spring Product Application</h1>
+	<h1>Coffee Shop Application</h1>
 	
-	<p><a href="/home">Proceed</a></p>
+	<p><a href="/home">Go!</a></p>
 	
 </body>
 </html>
